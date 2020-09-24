@@ -75,9 +75,14 @@ table {
     font-size: 0.8em;
     display: grid;
     border: 1px solid red;
+    
+}
+.card-footer-main {
+    display: grid;
     grid-template-areas: 
                         "img texto share";
-}
+    /*display: none;*/
+   }
 
 .card-footer-img-container {
     grid-area: img;
@@ -107,13 +112,14 @@ table {
 
 .card-footer-button-container {
     grid-area: share;
+    grid-row-start: 1;
     position: relative;
     display: flex;
     align-items: center;
     left: 50%;
 }
-.card-footer button {
 
+.card-footer button {
     border: none;
     width: 40px;
     height: 40px;
@@ -121,13 +127,57 @@ table {
 
 }
 
+.card-footer-nav-share-container {
+    display: none;
+}
+
+.card-footer-nav-share {
+    display: grid;
+    grid-template-areas: 
+                        'facebook twitter pintrest';
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    align-items: center;
+}
+.card-footer-nav-share li a img {
+    width: 50px;
+    height: 50px;
+}
+.nav-share-link {
+    display: none
+}
+
 .attribution {
     margin-top: 100px;
 
 }
+.active {
+    display: grid;
+
+}
+
+.card-footer-nav-share-facebook {
+    grid-area: facebook
+
+}
+
+.card-footer-nav-share-twitter {
+    grid-column: twitter
+
+}
+.card-footer-nav-share-pintrest {
+    grid-area: pintrest
+
+}
+
+.hide {
+    display: none;
+    grid-template: none;
+}
 
 @media screen and (min-width: 768px) {
     body {
+
       font-size: 1.8em;
       display: flex;
       justify-content: center;
@@ -135,9 +185,7 @@ table {
     }
 
     .card-container {
-        margin: 0;
-        margin-top: 5%;
-        max-height: 70vh;
+        margin: 5%;
     }
    
     .card-text {
